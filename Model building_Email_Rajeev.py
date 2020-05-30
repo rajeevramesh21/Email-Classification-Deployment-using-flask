@@ -547,7 +547,7 @@ import pickle
 # In[88]:
 
 
-pickle.dump(nb,open('emailmodel.pkl','wb'))
+pickle.dump(sgd,open('emailmodel.pkl','wb'))
 
 
 # In[89]:
