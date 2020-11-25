@@ -1,0 +1,22 @@
+1.open cmd in the project folder
+
+2.Check Python version
+python --version
+
+3.Install virtual environment
+python -m pip install --user virtualenv
+
+4.Create virual environment
+py -m venv env
+
+5.Activate virtual environment
+.\env\Scripts\activate
+
+6.Install required [packages
+pip install requests
+
+7.Installing all the libraries mentioned in requirements for main code
+pip install -r requirements.txt
+
+8.Run the application
+flask run

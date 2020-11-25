@@ -9,6 +9,19 @@ model = pickle.load(open('emailmodel.pkl', 'rb'))
 def home():
     return render_template('index.html')
 
+@app.route('/dash1', methods=['POST'])
+def dash1() :
+    return render_template('dash1.html')
+
+@app.route('/dash2', methods=['POST'])
+def dash2() :
+    return render_template('dash2.html')
+
+@app.route('/dash3', methods=['POST'])
+def dash3() :
+    return render_template('dash1.html')
+
+
 @app.route('/predict',methods=['POST'])
 def predict():
     '''
@@ -20,7 +33,9 @@ def predict():
 
     output = prediction
 
-    return render_template('index.html', prediction_text='The content is $ {}'.format(output))
+    return render_template('index.html', prediction_text='The content is {}'.format(output))
+
+
 
 
 if __name__ == "__main__":

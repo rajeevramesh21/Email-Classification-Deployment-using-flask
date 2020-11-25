@@ -8,26 +8,41 @@
 <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
-  
+  <link href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+  <style>
+  body {background-color: #7FFFD4;}
+  </style>
 </head>
 
 <body>
+
+<div class="card" style="position: absolute; left: 50%;top: 50%;text-align: center;width:546px;height:265px;margin-left: -273px; /*half width*/margin-top: -132px;background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);background-size: 400% 400%;animation: gradient 15s ease infinite;">
  <div class="login">
 	<h1>Predict Email Content</h1>
 
      <!-- Main Input For Receiving Query to our ML -->
     <form action="{{ url_for('predict')}}"method="post">
-    	<input type="text" name="content" placeholder="Content" required="required" />
+    	<input type="text" style="width: 80%;height: 130px;" name="content" placeholder="Content" required="required" />
+        <button type="submit" class="btn btn-success btn-lg">Predict</button>
+        <br>
+        <br>
 
-        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
     </form>
+    <div class="btn-group" id="left-col" align="center">
+      <form action="/dash1" method="post" align="center">
+        <input type="submit" class="btn btn-primary" style="margin:10px;" name="text" value="Histogram" align="center">
+      </form>
+      <form action="/dash2" method="post" align="center">
+        <input type="submit" class="btn btn-primary" style="margin:10px;" name="text" value="Sentiment Polarity" align="center">
+      </form>
+    </div>
 
    <br>
    <br>
    {{ prediction_text }}
 
  </div>
-
+</div>
 
 </body>
 </html>
